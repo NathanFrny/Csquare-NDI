@@ -8,7 +8,7 @@ const questions = [
         "pollution-score": 1,
         "planet-asset": "img/planet/q1r1.png",
         "onclic-text": "",
-        "brief-text": "Les combustibles fossiles sont effectivement la source d'énergie la plus répandue, fournissant une part significative des besoins énergétiques mondiaux. Par exemple, les produits pétroliers représentent environ 35% des besoins énergétiques des États-Unis. Cependant, ils sont aussi associés à des problèmes environnementaux majeurs, notamment la pollution de l'air et de l'eau, la dégradation des terres, et les émissions importantes de gaz à effet de serre contribuant au réchauffement climatique​​. https://www.nrdc.org/stories/fossil-fuels-dirty-facts",
+        "brief-text": "Les combustibles fossiles sont effectivement la source d'énergie la plus répandue, fournissant une part significative des besoins énergétiques mondiaux. Par exemple, les produits pétroliers représentent environ 35% des besoins énergétiques des États-Unis. Cependant, ils sont aussi associés à des problèmes environnementaux majeurs, notamment la pollution de l'air et de l'eau, la dégradation des terres, et les émissions importantes de gaz à effet de serre contribuant au réchauffement climatique​​. <a href='https://www.nrdc.org/stories/fossil-fuels-dirty-facts'>lien</a>",
         "brief-image": "img/brief/q1r1.png"
       },
       {
@@ -17,7 +17,7 @@ const questions = [
         "pollution-score": 2,
         "planet-asset": "img/planet/q1r2.png",
         "onclic-text": "",
-        "brief-text": "L'énergie nucléaire est en effet l'une des sources d'énergie les plus performantes en termes de faibles émissions de carbone. Cependant, elle pose des problèmes importants liés aux déchets radioactifs et à la sécurité. La gestion des déchets nucléaires est un défi majeur, nécessitant un stockage de longue durée pour minimiser les risques de contamination radioactive​​​​​​. https://www.eia.gov/energyexplained/nuclear/nuclear-power-and-the-environment.php",
+        "brief-text": "L'énergie nucléaire est en effet l'une des sources d'énergie les plus performantes en termes de faibles émissions de carbone. Cependant, elle pose des problèmes importants liés aux déchets radioactifs et à la sécurité. La gestion des déchets nucléaires est un défi majeur, nécessitant un stockage de longue durée pour minimiser les risques de contamination radioactive​​​​​​. <a href='https://www.eia.gov/energyexplained/nuclear/nuclear-power-and-the-environment.php'>lien</a>",
         "brief-image": "img/brief/q1r2.png"
       },
       {
