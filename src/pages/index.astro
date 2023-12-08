@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
+import Question from '../components/Question.astro';
 
 import '../style/global.css';
 
@@ -12,21 +13,18 @@ import '../style/global.css';
 			<a href="#home"><img src="./src/img/LogoCCorp2.png" alt="Logo"></a>
 			<a href="#home">Accueil</a>
 			<a href="#jouer">Jouer</a>
-			<a href="#theme" id="mode-switch" onclick="toggleDarkMode()">Dark Mode</a>
+			<a href="#theme" id="mode-switch" onclick="toggleDarkMode();">Dark Mode</a>
 			<div href="#langue" id="lang-select">Langue
-				<select onchange="changeLanguage()">
+				<select onchange="changeLanguage();">
 					<option value="fr"> Français</option>
 					<option value="en">English</option>
 				</select>
 			</div>
 		</div>
 
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
+        <Question/>
 			
+
 		<script in:line>
 			function toggleDarkMode() {
         var body = document.body;
@@ -50,6 +48,10 @@ import '../style/global.css';
     }
 		</script>
 	</main>
+
+	<footer>
+		<p>© 2023 CSQUARE. Tous droits réservés.</p>
+	</footer>
 </Layout>
 
 <style>
@@ -63,21 +65,6 @@ import '../style/global.css';
 		line-height: 1.6;
 	}
 	
-	
-	h1 {
-		font-size: 4rem;
-		font-weight: 700;
-		line-height: 1;
-		text-align: center;
-		margin-bottom: 1em;
-	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-	}
 	.navbar {
         background-color: #333;
         overflow: hidden;
@@ -123,7 +110,11 @@ import '../style/global.css';
         text-decoration: none;
         font-size: 17px;
     }
-
+	footer {
+		margin-top: 2rem;
+		text-align: center;
+		color: #f2f2f2;
+	}
     
 </style>
 
