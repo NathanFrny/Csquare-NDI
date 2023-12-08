@@ -333,6 +333,7 @@ main {
     opacity: 0;
 }
 
+
 .rep-container:hover p {
     opacity: 1;
 }
@@ -342,6 +343,12 @@ main {
     height: 200px;
     object-fit: cover;
     border-radius: 50%;
+
+    transition: border-radius .5s ease-in-out;
+}
+
+.rep-container:hover>img {
+    border-radius: 0;
 }
 
 #earth {
