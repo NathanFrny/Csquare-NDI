@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Make your better world !</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li>
+            <a href="/"><img src="img/LogoCCorp2.png" alt="Logo Calais Corp" class="logo" /></a>
+          </li>
+          <li><a href="/">Accueil</a></li>
+          <li><a href="/game">Jouer</a></li>
+          <li>
+            <button id="light-switch">
+              <img src="img/sun.svg" alt="Toggle light mode" class="fa" onclick="toggleLightMode()" />
+            </button>
+          </li>
+          <li><a href="/en">Switch to English</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Grid:
+        |  |r1|  |r2|  |
+        |r3|  | T|  |r4|
+        |  | quest |  |
+    -->
+      <div class="game-container">
+        <div class="game">
+          <div id="r1" class="rep-container">
+            <img src="img/q1r1.png" alt="" />
+            <p>Lorem, ipsum dolor.</p>
+          </div>
+          <div id="r2" class="rep-container">
+            <img src="img/q1r2.png" alt="" />
+          </div>
+          <div id="r3" class="rep-container">
+            <img src="img/q1r3.png" alt="" />
+          </div>
+          <div id="r4" class="rep-container">
+            <img src="img/q1r4.png" alt="" />
+          </div>
+
+          <!-- terre -->
+          <div id="earth-stack">
+            <img src="img/earth.png" alt="Terre" />
+          </div>
+
+          <div id="question" data-current-question="q1">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt sequi ?
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
