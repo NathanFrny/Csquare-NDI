@@ -5,14 +5,6 @@
 }
 
 html {
-    --primary-color: #1a1a1a;
-    --secondary-color: #f1f1f1;
-    --accent-color: #ff0000;
-    --accent-color-light: #ff4d4d;
-    --glossy-gradient: linear-gradient(90deg, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.1));
-}
-
-html.dark {
     --primary-color: #f1f1f1;
     --secondary-color: #1a1a1a;
     --accent-color: #ff0000;
@@ -20,18 +12,27 @@ html.dark {
     --glossy-gradient: linear-gradient(90deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.1));
 }
 
+html.light {
+    --primary-color: #1a1a1a;
+    --secondary-color: #f1f1f1;
+    --accent-color: #ff0000;
+    --accent-color-light: #ff4d4d;
+    --glossy-gradient: linear-gradient(90deg, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.1));
+}
+
+
 body {
     font-family: 'Liberation Sans', sans-serif;
     color: var(--primary-color);
     position: relative;
     background-color: var(--secondary-color);
+    margin: 0;
 
 
     transition: color .5s ease-in-out, background-color .5s ease-in-out;
 
     /* TESTING */
     /* background-color: sienna; */
-    min-height: 500vh;
 }
 
 a {
@@ -115,8 +116,113 @@ header nav button {
     left: 0;
     width: 100%;
     background-color: #333;
-    color : #fff;
+    color: #fff;
     text-align: center;
     padding: 10px 0;
 }
 
+
+#light-switch>.fa {
+    fill: var(--primary-color);
+}
+
+
+
+/* Game CSS */
+
+/* grid disposition of the .game */
+/* Grid:
+        |  |r1|  |r2|  |
+        |r3|  | earth|  |r4|
+        |  | question |  |
+*/
+
+main {
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+}
+
+.game {
+    display: grid;
+    gap: 1em;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr auto;
+    grid-template-areas:
+        ". r1 . r2 ."
+        "r3 . earth . r4"
+        ". question question question .";
+
+    background-color: var(--glossy-gradient);
+    padding: 1em;
+    width: 100%;
+    height: 80vh;
+
+    /* background-color: red; */
+}
+
+#r1,
+#r2,
+#r3,
+#r4,
+#earth,
+#question {
+    /* background-color: var(--secondary-color); */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* outline: solid black; */
+}
+
+#r1 {
+    grid-area: r1;
+}
+
+#r2 {
+    grid-area: r2;
+}
+
+#r3 {
+    grid-area: r3;
+}
+
+#r4 {
+    grid-area: r4;
+}
+
+#earth {
+    grid-area: earth;
+}
+
+#question {
+    grid-area: question;
+}
+
+#question p {
+    font-size: 1rem;
+    padding-top: .75em;
+    padding-bottom: .75em;
+}
+
+.rep-container {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+}
+
+.rep-container p {
+    transition: opacity .5s ease-in-out;
+    opacity: 0;
+}
+
+.rep-container:hover p {
+    opacity: 1;
+}
+
+.rep-container>img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+}
