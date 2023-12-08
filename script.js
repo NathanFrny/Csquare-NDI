@@ -74,7 +74,7 @@ function selectAnswer(answerId) {
         question.innerHTML = `<p>${questions[currentQuestion]["answers"][answerId]["onclic-text"]}</p>`
         setTimeout(() => {
             nextQuestion();
-        }, 0);
+        }, 8000);
     }
     else {
         nextQuestion();
