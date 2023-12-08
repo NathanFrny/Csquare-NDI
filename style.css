@@ -10,7 +10,11 @@ html {
     --accent-color: #c52e00;
     --accent-color-light: #c52e00;
     --glossy-gradient: linear-gradient(90deg, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.1));
-    --gradient: background: rgb(176,152,152);background: -moz-linear-gradient(90deg, rgba(176,152,152,1) 26%, rgba(255,255,255,1) 100%);background: -webkit-linear-gradient(90deg, rgba(176,152,152,1) 26%, rgba(255,255,255,1) 100%);background: linear-gradient(90deg, rgba(176,152,152,1) 26%, rgba(255,255,255,1) 100%);filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#b09898",endColorstr="#ffffff",GradientType=1);
+    --gradient: background: rgb(176, 152, 152);
+    background: -moz-linear-gradient(90deg, rgba(176, 152, 152, 1) 26%, rgba(255, 255, 255, 1) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(176, 152, 152, 1) 26%, rgba(255, 255, 255, 1) 100%);
+    background: linear-gradient(90deg, rgba(176, 152, 152, 1) 26%, rgba(255, 255, 255, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#b09898", endColorstr="#ffffff", GradientType=1);
 }
 
 html.dark {
@@ -19,7 +23,11 @@ html.dark {
     --accent-color: #c52e00;
     --accent-color-light: #c52e00;
     --glossy-gradient: linear-gradient(90deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.1));
-    --gradient: background: rgb(93,89,89);background: -moz-linear-gradient(90deg, rgba(93,89,89,1) 26%, rgba(0,0,0,1) 100%);background: -webkit-linear-gradient(90deg, rgba(93,89,89,1) 26%, rgba(0,0,0,1) 100%);background: linear-gradient(90deg, rgba(93,89,89,1) 26%, rgba(0,0,0,1) 100%);filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#5d5959",endColorstr="#000000",GradientType=1);
+    --gradient: background: rgb(93, 89, 89);
+    background: -moz-linear-gradient(90deg, rgba(93, 89, 89, 1) 26%, rgba(0, 0, 0, 1) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(93, 89, 89, 1) 26%, rgba(0, 0, 0, 1) 100%);
+    background: linear-gradient(90deg, rgba(93, 89, 89, 1) 26%, rgba(0, 0, 0, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#5d5959", endColorstr="#000000", GradientType=1);
 }
 
 html.light {
@@ -42,16 +50,21 @@ body {
     /* TESTING */
     /* background-color: sienna; */
     min-height: 100vh;
-    background-image: url('/img/background.png');
-    background-size: cover; /* Ajuste la taille de l'image pour couvrir tout l'arrière-plan */
-    background-position: center; /* Centre l'image à l'arrière-plan */
-    background-repeat: no-repeat; /* Empêche la répétition de l'image */
+
+    background-image: url('/img/bg.jpg');
+    background-size: cover;
+    /* Ajuste la taille de l'image pour couvrir tout l'arrière-plan */
+    background-position: center;
+    /* Centre l'image à l'arrière-plan */
+    background-repeat: no-repeat;
+    /* Empêche la répétition de l'image */
 
 }
 
 main {
     position: relative;
-    z-index: 1; /* Assure que le contenu est au-dessus de l'arrière-plan flou */
+    z-index: 1;
+    /* Assure que le contenu est au-dessus de l'arrière-plan flou */
 }
 
 header::before {
@@ -61,9 +74,12 @@ header::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: inherit; /* Utilisez la même image que l'arrière-plan du body */
-    backdrop-filter: blur(10px); /* Ajustez la valeur du flou selon vos préférences */
-    z-index: -1; /* Placez l'arrière-plan flou derrière le contenu principal */
+    background-image: inherit;
+    /* Utilisez la même image que l'arrière-plan du body */
+    backdrop-filter: blur(10px);
+    /* Ajustez la valeur du flou selon vos préférences */
+    z-index: -1;
+    /* Placez l'arrière-plan flou derrière le contenu principal */
 }
 
 a {
@@ -147,17 +163,18 @@ h1 {
     text-align: center;
     color: var(--accent-color);
     animation: bounce 1s infinite alternate;
-  }
-  
-  @keyframes bounce {
+}
+
+@keyframes bounce {
     0% {
-      transform: translateY(0);
+        transform: translateY(0);
     }
+
     100% {
-      transform: translateY(-10px);
+        transform: translateY(-10px);
     }
-  }
-  
+}
+
 
 .footer {
     position: absolute;
@@ -172,44 +189,46 @@ h1 {
 
 
 .highlight {
-    color: #c52e00; /* ou toute autre couleur que vous préférez */
+    color: #c52e00;
+    /* ou toute autre couleur que vous préférez */
     font-weight: bold;
-  }
-  
-  .intro-text,
-  .game-description,
-  .mission-statement,
-  .call-to-action,
-  .start-adventure {
+}
+
+.intro-text,
+.game-description,
+.mission-statement,
+.call-to-action,
+.start-adventure {
     font-size: 1.2em;
     line-height: 1.6em;
     margin-bottom: 1.5em;
-  }
-  
-  .game-title {
-    font-weight: bold;
-    color: #009900; /* ou toute autre couleur que vous préférez */
-  }
+}
 
-  p {
+.game-title {
+    font-weight: bold;
+    color: #009900;
+    /* ou toute autre couleur que vous préférez */
+}
+
+p {
     margin-left: 20%;
     margin-right: 20%;
-  }
+}
 
-  header nav a:hover {
+header nav a:hover {
     color: var(--accent-color);
     text-decoration: underline;
-  }
+}
 
-  #light-switch img {
+#light-switch img {
     transition: transform 0.3s ease-in-out;
-  }
-  
-  #light-switch:hover img {
-    transform: rotate(45deg);
-  }
+}
 
-  .start-adventure {
+#light-switch:hover img {
+    transform: rotate(45deg);
+}
+
+.start-adventure {
     display: inline-block;
     padding: 1em 2em;
     margin-top: 1em;
@@ -220,17 +239,129 @@ h1 {
     font-size: 1.2em;
     transition: background-color 0.3s ease-in-out;
     position: relative;
-  }
-  
-  .start-adventure:hover {
+}
+
+.start-adventure:hover {
     background-color: var(--accent-color-light);
-  }
-  
-  .start-adventure::before {
-    content: '\1F3C3'; /* Unicode pour l'icône de fusée */
+}
+
+.start-adventure::before {
+    content: '\1F3C3';
+    /* Unicode pour l'icône de fusée */
     font-size: 1.5em;
     margin-right: 0.5em;
-  }
+}
 
-  
-  
+
+
+main {
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+}
+
+.game {
+    display: grid;
+    gap: 1em;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr auto;
+    grid-template-areas:
+        ". r1 . r2 ."
+        "r3 . earth . r4"
+        ". question question question .";
+
+    background-color: var(--glossy-gradient);
+    padding: 1em;
+    width: 100%;
+    height: 80vh;
+
+    /* background-color: red; */
+}
+
+#r1,
+#r2,
+#r3,
+#r4,
+#earth,
+#question {
+    /* background-color: var(--secondary-color); */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* outline: solid black; */
+}
+
+#r1 {
+    grid-area: r1;
+}
+
+#r2 {
+    grid-area: r2;
+}
+
+#r3 {
+    grid-area: r3;
+}
+
+#r4 {
+    grid-area: r4;
+}
+
+#earth {
+    grid-area: earth;
+}
+
+#question {
+    grid-area: question;
+}
+
+#question p {
+    font-size: 1rem;
+    padding-top: .75em;
+    padding-bottom: .75em;
+}
+
+.rep-container {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+}
+
+.rep-container p {
+    transition: opacity .5s ease-in-out;
+    opacity: 0;
+}
+
+.rep-container:hover p {
+    opacity: 1;
+}
+
+.rep-container>img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+#earth {
+    position: relative;
+}
+
+#earth>img {
+    position: absolute;
+    object-fit: cover;
+}
+
+.hidden {
+    display: none;
+}
+
+
+.brief-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}

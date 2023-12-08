@@ -23,8 +23,10 @@ const r4 = document.getElementById('r4');
 const reponsesElements = [r1, r2, r3, r4];
 const earthStack = document.getElementById('earth');
 const question = document.getElementById('question');
+const brief = document.getElementById('brief');
+const body = document.querySelector('body');
 
-
+var score = 0;
 var answers = [];
 var currentQuestion = 0;
 
@@ -37,12 +39,12 @@ function setup() {
                 return;
             }
             disableResponses();
-            selectAnswer(r.id[1]); // selects the number only
+            selectAnswer(String(r.id[1] - 1)); // selects the number only
         });
     })
 }
 
-function enableResponse() {
+function enableResponses() {
     reponsesElements.forEach((r) => {
         r.removeAttribute('disabled');
     })
@@ -58,28 +60,44 @@ function selectAnswer(answerId) {
     // store the answer in the list of answers
     answers.push(answerId);
 
-    console.log("answerId", answerId);
+    score += questions[currentQuestion]["answers"][answerId]["pollution-score"];
 
-    // Show the onclic-text for 5 secons in the question div
-    question.innerHTML = questions[currentQuestion].answers[answerId].onclic_text;
-    setTimeout(() => {
+    // Add to the brief at the end
+    brief.innerHTML += `<div class="brief-item"><img src="${questions[currentQuestion]["answers"][answerId]["brief-image"]}" /><p>${questions[currentQuestion]["answers"][answerId]["brief-text"]}</p></div>`
+    // add the earth to the stack
+    if (questions[currentQuestion]["answers"][answerId]["planet-asset"]) {
+        earthStack.innerHTML += `<img src="${questions[currentQuestion]["answers"][answerId]["planet-asset"]}" />`
+    }
+
+    if (questions[currentQuestion]["answers"][answerId]["onclic-text"]) {
+        // Show the onclic-text for 5 secons in the question div
+        question.innerHTML = `<p>${questions[currentQuestion]["answers"][answerId]["onclic-text"]}</p>`
+        setTimeout(() => {
+            nextQuestion();
+        }, 0);
+    }
+    else {
         nextQuestion();
-    }, 5000);
+    }
+
 }
 
 function nextQuestion() {
     currentQuestion++;
-    if (currentQuestion >= questions.length) {
+    console.log(questions[currentQuestion]["text"])
+    if (currentQuestion >= questions.length - 1) {
         // end of game
         alert("end of game")
         endOfGame();
         return;
     }
     questions[currentQuestion].answers.forEach((answer, index) => {
-        console.log(answer, index)
+        // console.log(answer, index)
         reponsesElements[index].innerHTML = `
         <img src="${answer.image}" alt="${answer.text}" /><p>${answer.text}</p>`
     });
+
+    question.innerHTML = questions[currentQuestion].text;
 
     enableResponses();
 
@@ -94,7 +112,19 @@ function startGame() {
 }
 
 function endOfGame() {
-    console.log("end of game");
+    alert("end of game")
+    brief.classList.remove('hidden');
+
+    if (score < 11) {
+        body.style.backgroundImage = "url('img/ville_parfaite.png')";
+    }
+    else if (score < 21) {
+        body.style.backgroundImage = "url('img/ville_moderne.png')";
+    }
+    else {
+        body.style.backgroundImage = "url('img/ville_polluee.png')";
+    }
+
 }
 
 
